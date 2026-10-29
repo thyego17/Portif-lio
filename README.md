@@ -36,7 +36,7 @@ Portfólio pessoal de **Thyego**, desenvolvedor front-end. O site apresenta meus
 Portif-lio/
 ├── index.html
 ├── README.md
-├── foto.png
+├── foto.jpg
 ├── casa-da-musica.png
 ├── cafe-noturno.png
 ├── academia-vital.png
