@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thyego | Desenvolvedor Front-End</title>
+<meta name="description" content="Portfólio de Thyego, desenvolvedor front-end. Sites responsivos e cuidadosos, feitos com HTML, CSS e JavaScript.">
+<meta name="theme-color" content="#0e0b0c">
+<meta property="og:title" content="Thyego | Desenvolvedor Front-End">
+<meta property="og:description" content="Sites feitos com calma e cuidado. Veja as obras.">
+<meta property="og:image" content="foto.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪶</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0e0b0c; --ink:#ebe3d8; --muted:#9d9188; --line:rgba(235,227,216,.16);
+  --accent:#c4505e;
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --sans:"Jost","Segoe UI",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{background:var(--bg);color:var(--ink);font:400 1.05rem/1.7 var(--sans);-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0;z-index:50;pointer-events:none;opacity:.07;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 1.5rem}
+.label{font:500 .75rem var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.label b{color:var(--accent);font-weight:500;margin-right:.6rem}
+em{font-style:italic;color:var(--accent)}
+.link{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:2px;transition:color .2s}
+.link:hover{color:var(--accent)}
+
+/* Header */
+header{position:sticky;top:0;z-index:20;background:rgba(14,11,12,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:68px}
+.logo{font:italic 500 1.7rem var(--serif);text-decoration:none}
+nav ul{display:flex;gap:2rem;list-style:none}
+nav a{font:500 .75rem var(--sans);letter-spacing:.18em;text-transform:uppercase;text-decoration:none;color:var(--muted);transition:color .2s}
+nav a:hover{color:var(--ink)}
+.menu-btn{display:none;background:none;border:0;color:var(--ink);font:500 .75rem var(--sans);letter-spacing:.18em;text-transform:uppercase;cursor:pointer}
+
+/* Hero */
+.hero{padding:5.5rem 0 6rem}
+.hero .wrap{display:grid;grid-template-columns:1.4fr 1fr;gap:4rem;align-items:end}
+.hero h1{font:500 clamp(3rem,8vw,6.2rem)/1 var(--serif);letter-spacing:-.01em;margin:1.2rem 0 1.8rem}
+.hero p{color:var(--muted);font-size:1.15rem;max-width:44ch;margin-bottom:2.2rem}
+.hero .go{display:flex;gap:2rem;flex-wrap:wrap}
+.photo{position:relative;justify-self:end;width:min(340px,100%);aspect-ratio:3/4}
+.photo img{width:100%;height:100%;object-fit:cover;filter:grayscale(.55) contrast(1.05)}
+.photo::after{content:"";position:absolute;inset:14px -14px -14px 14px;border:1px solid var(--accent);z-index:-1}
+.in{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.in:nth-child(2){animation-delay:.1s}.in:nth-child(3){animation-delay:.2s}.in:nth-child(4){animation-delay:.3s}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+
+/* Sections */
+section{padding:5rem 0;border-top:1px solid var(--line)}
+.sec{display:grid;grid-template-columns:200px 1fr;gap:3rem}
+h2{font:500 clamp(2rem,4vw,3rem)/1.1 var(--serif);margin-bottom:1.6rem}
+.sec p{color:var(--muted);max-width:56ch}
+.sec p+p{margin-top:1rem}
+dl{margin-top:2.5rem}
+dl div{display:grid;grid-template-columns:150px 1fr;gap:1rem;padding:1rem 0;border-top:1px solid var(--line)}
+dt{font:500 .75rem var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--muted);padding-top:.35rem}
+dd{font:400 1.35rem/1.4 var(--serif)}
+dd i{color:var(--muted)}
+
+/* Works */
+.work{display:grid;grid-template-columns:48px 1fr 190px;gap:1.5rem;align-items:center;padding:1.8rem 0;border-top:1px solid var(--line);transition:padding .35s}
+.work:last-child{border-bottom:1px solid var(--line)}
+.work:hover{padding-left:.8rem}
+.num{font:italic 400 1.3rem var(--serif);color:var(--accent)}
+.work h3{font:500 clamp(1.7rem,3.2vw,2.4rem)/1.1 var(--serif)}
+.work h3 a{text-decoration:none}
+.work h3 a:hover{color:var(--accent)}
+.work p{margin:.4rem 0 .7rem;font-size:1rem;max-width:50ch}
+.meta{font:500 .72rem var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.meta a{color:var(--ink);margin-left:.8rem;text-decoration:none;border-bottom:1px solid var(--accent)}
+.meta a:hover{color:var(--accent)}
+.thumb{aspect-ratio:4/3;overflow:hidden;border:1px solid var(--line)}
+.thumb img{width:100%;height:100%;object-fit:cover;object-position:top;filter:grayscale(1) brightness(.85);transition:filter .5s,transform .6s}
+.work:hover .thumb img{filter:none;transform:scale(1.05)}
+
+/* Services */
+.svc{padding:1.4rem 0;border-top:1px solid var(--line)}
+.svc:last-of-type{border-bottom:1px solid var(--line)}
+.svc h3{font:500 1.7rem/1.2 var(--serif)}
+.svc p{margin-top:.2rem}
+.note{margin-top:1.6rem;font-style:italic;font-family:var(--serif);font-size:1.25rem;color:var(--ink)}
+
+/* Contact */
+.contact h2{font-size:clamp(2.6rem,7vw,5rem);line-height:1}
+.social{display:flex;gap:1rem;flex-wrap:wrap;margin:2rem 0 1.2rem}
+.btn{display:inline-block;padding:.9rem 2rem;border:1px solid var(--accent);color:var(--ink);text-decoration:none;font:500 .78rem var(--sans);letter-spacing:.2em;text-transform:uppercase;transition:background .25s,transform .25s}
+.btn:hover{background:var(--accent);transform:translateY(-2px)}
+.addr{font-size:.95rem;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:1.8rem 0;color:var(--muted);font-size:.85rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
+
+@media (max-width:860px){
+  .hero{padding:3.5rem 0 4rem}
+  .hero .wrap,.sec{grid-template-columns:1fr;gap:2rem}
+  .photo{justify-self:start;width:min(260px,78%);order:-1;margin-right:14px}
+  section{padding:3.5rem 0}
+  .work{grid-template-columns:34px 1fr;gap:1rem}
+  .thumb{grid-column:2;max-width:260px}
+  dl div{grid-template-columns:1fr;gap:.2rem}
+  .menu-btn{display:block}
+  nav{position:absolute;top:68px;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--line);display:none;padding:1rem 1.5rem 1.5rem}
+  nav.open{display:block}
+  nav ul{flex-direction:column;gap:1.2rem}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#inicio">Thyego</a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="menu">Menu</button>
+    <nav id="menu" aria-label="Principal">
+      <ul>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#obras">Obras</a></li>
+        <li><a href="#oficio">Ofício</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="inicio" style="border:0">
+  <div class="wrap">
+    <div>
+      <span class="label in">Desenvolvedor front-end</span>
+      <h1 class="in">Sites feitos com <em>calma</em> e cuidado.</h1>
+      <div class="in">
+        <p>Construo sites responsivos, claros e bem acabados para pequenos negócios e projetos pessoais.</p>
+        <div class="go">
+          <a class="link" href="#obras">Ver as obras</a>
+          <a class="link" href="#contato">Falar comigo</a>
+        </div>
+      </div>
+    </div>
+    <div class="photo in"><img src="foto.png" alt="Retrato de Thyego" width="340" height="453"></div>
+  </div>
+</section>
+
+<section id="sobre">
+  <div class="wrap sec">
+    <span class="label"><b>I</b>Sobre</span>
+    <div>
+      <h2>Aprendo construindo, um projeto de cada vez.</h2>
+      <p>Estudo desenvolvimento web e cada obra deste portfólio parte de uma necessidade real de um negócio: cardápio, planos, horários, contato.</p>
+      <p>Busco uma oportunidade para crescer como desenvolvedor e também aceito projetos como freelancer.</p>
+      <dl>
+        <div><dt>Linguagens</dt><dd>HTML5, CSS3, JavaScript</dd></div>
+        <div><dt>Ferramentas</dt><dd>Git, GitHub, GitHub Pages, VS Code</dd></div>
+        <div><dt>Princípios</dt><dd>Layout responsivo, HTML semântico, acessibilidade</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section id="obras">
+  <div class="wrap sec">
+    <span class="label"><b>II</b>Obras</span>
+    <div>
+      <h2>Projetos selecionados</h2>
+
+      <article class="work">
+        <span class="num">01</span>
+        <div>
+          <h3><a href="https://thyego17.github.io/Projeto-5/">Casa da Música</a></h3>
+          <p>Loja de instrumentos com catálogo por categorias, destaques e carrinho de compras funcional.</p>
+          <span class="meta">Loja de instrumentos · HTML · CSS · JavaScript<a href="https://github.com/thyego17/Projeto-5">Código</a></span>
+        </div>
+        <div class="thumb"><img src="casa-da-musica.png" alt="Página inicial do projeto Casa da Música" loading="lazy"></div>
+      </article>
+
+      <article class="work">
+        <span class="num">02</span>
+        <div>
+          <h3><a href="https://thyego17.github.io/Projeto-3/">Café Noturno</a></h3>
+          <p>Cafeteria com cardápio por categorias, horários do dia e aviso de aberto ou fechado em tempo real.</p>
+          <span class="meta">HTML · CSS · JavaScript<a href="https://github.com/thyego17/Projeto-3">Código</a></span>
+        </div>
+        <div class="thumb"><img src="cafe-noturno.png" alt="Página inicial do projeto Café Noturno" loading="lazy"></div>
+      </article>
+
+      <article class="work">
+        <span class="num">03</span>
+        <div>
+          <h3><a href="https://thyego17.github.io/Projeto-4/">Academia Vital</a></h3>
+          <p>Academia com planos mensais e anuais calculados na hora, benefícios e horário de funcionamento.</p>
+          <span class="meta">HTML · CSS · JavaScript<a href="https://github.com/thyego17/Projeto-4">Código</a></span>
+        </div>
+        <div class="thumb"><img src="academia-vital.png" alt="Página inicial do projeto Academia Vital" loading="lazy"></div>
+      </article>
+
+      <article class="work">
+        <span class="num">04</span>
+        <div>
+          <h3><a href="https://thyego17.github.io/Projeto-2/">Pizzaria Napoli</a></h3>
+          <p>Pizzaria com cardápio interativo, promoção da terça e pedido enviado direto pelo WhatsApp.</p>
+          <span class="meta">HTML · CSS · JavaScript<a href="https://github.com/thyego17/Projeto-2">Código</a></span>
+        </div>
+        <div class="thumb"><img src="pizzaria-napoli.png" alt="Página inicial do projeto Pizzaria Napoli" loading="lazy"></div>
+      </article>
+
+      <article class="work">
+        <span class="num">05</span>
+        <div>
+          <h3><a href="https://thyego17.github.io/Projeto-1/">Barbearia Clássica</a></h3>
+          <p>Barbearia com escolha de serviço, dia e horário, e agendamento direto pelo WhatsApp.</p>
+          <span class="meta">HTML · CSS · JavaScript<a href="https://github.com/thyego17/Projeto-1">Código</a></span>
+        </div>
+        <div class="thumb"><img src="barbearia-classica.png" alt="Página inicial do projeto Barbearia Clássica" loading="lazy"></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="oficio">
+  <div class="wrap sec">
+    <span class="label"><b>III</b>Ofício</span>
+    <div>
+      <h2>O que posso fazer por você</h2>
+      <div class="svc"><h3>Site institucional</h3><p>Seu negócio apresentado com serviços, horários e contato num só lugar.</p></div>
+      <div class="svc"><h3>Landing page</h3><p>Uma página com um único objetivo: orçamento, reserva ou conversa no WhatsApp.</p></div>
+      <div class="svc"><h3>Revisão visual</h3><p>Deixo um site existente responsivo e coerente com a sua marca.</p></div>
+      <p class="note">Conversamos, combinamos o escopo e o site vai ao ar em 3 a 7 dias.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contato">
+  <div class="wrap sec">
+    <span class="label"><b>IV</b>Contato</span>
+    <div>
+      <h2>Vamos <em>conversar</em>.</h2>
+      <p>Conte sobre o seu projeto ou sobre a vaga.</p>
+      <div class="social">
+        <a class="btn" href="mailto:thyegodaniel17@gmail.com">E-mail</a>
+        <a class="btn" href="https://github.com/thyego17">GitHub</a>
+        <a class="btn" href="https://instagram.com/thyx.71">Instagram</a>
+      </div>
+      <p class="addr">thyegodaniel17@gmail.com</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Thyego</span>
+    <span>Feito à mão com HTML, CSS e JavaScript</span>
+  </div>
+</footer>
+
+<script>
+const btn=document.querySelector('.menu-btn'),menu=document.getElementById('menu');
+btn.addEventListener('click',()=>{const o=menu.classList.toggle('open');btn.setAttribute('aria-expanded',o)});
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');btn.setAttribute('aria-expanded',false)}));
+</script>
+</body>
+</html>
